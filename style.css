@@ -29,7 +29,6 @@ body {
     display: flex;
     overflow: hidden;
     box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-    /* RESTORED FADE IN ANIMATION */
     animation: fadeIn 1s ease-out forwards;
 }
 
@@ -38,27 +37,12 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-
-.subtitle {
-    color: var(--text-dim);
-    letter-spacing: 2px;
-    margin-top: 10px;
-    /* Add this line below */
-    margin-bottom: 25px; /* Adjust this value (e.g., 20px, 30px) for more or less space */
-}
-
-.summary {
-    max-width: 500px;
-    line-height: 1.6;
-    color: var(--text-dim);
-}
-
-
 .sidebar {
     width: 260px;
     background: rgba(0, 0, 0, 0.2);
     padding: 40px 20px;
     border-right: 1px solid var(--glass-border);
+    flex-shrink: 0; /* Prevents sidebar from squishing */
 }
 
 .sidebar .logo {
@@ -96,7 +80,6 @@ body {
 }
 .main-content::-webkit-scrollbar { display: none; }
 
-/* RESTORED FLOATING ANIMATION */
 .main-title {
     font-size: 8rem;
     font-weight: 900;
@@ -111,11 +94,31 @@ body {
     50% { transform: translateY(-15px); }
 }
 
+/* HEADER SECTION UPDATED TO EXTEND FULL WIDTH */
 .header-content {
     display: flex;
     align-items: center;
     gap: 40px;
     margin-bottom: 80px;
+    width: 100%; 
+}
+
+.header-text {
+    flex: 1; /* Tells text to fill available space */
+}
+
+.subtitle {
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-bottom: 25px; 
+}
+
+.summary {
+    width: 100%;
+    max-width: none; /* Removed the 500px limit */
+    line-height: 1.6;
+    color: var(--text-dim);
 }
 
 .profile-frame {
@@ -125,6 +128,7 @@ body {
     overflow: hidden;
     border: 2px solid var(--glass-border);
     transition: 0.5s ease;
+    flex-shrink: 0;
 }
 
 .profile-frame:hover {
@@ -191,15 +195,18 @@ h2 { margin-bottom: 30px; font-size: 1.5rem; opacity: 0.9; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
 .skill-tags span { background: var(--glass); padding: 8px 16px; border-radius: 10px; transition: 0.3s; }
 
-/* RESTORED REVEAL SCROLL ANIMATION */
+/* REVEAL SCROLL ANIMATION */
 .reveal { 
     opacity: 0; 
     transform: translateY(30px); 
-    transition: 0.8s ease-out; 
+    transition: all 0.8s ease-out; 
+    visibility: hidden;
 }
+
 .reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
+    opacity: 1 !important; 
+    transform: translateY(0) !important; 
+    visibility: visible !important;
 }
 
 /* Modal Styles */
@@ -239,16 +246,5 @@ h2 { margin-bottom: 30px; font-size: 1.5rem; opacity: 0.9; }
     padding: 15px; font-family: 'Inter', sans-serif;
 }
 
-/* Force visibility when active is triggered */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-    visibility: hidden; /* Prevents interaction before reveal */
-}
-
-.reveal.active {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    visibility: visible !important;
-}
+.contact-details p { margin-bottom: 10px; }
+.contact-details span { color: var(--text-dim); }
