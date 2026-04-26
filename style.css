@@ -241,6 +241,70 @@ h2 { margin-bottom: 30px; font-size: 1.5rem; opacity: 0.9; }
     cursor: pointer;
 }
 
+/* --- RESPONSIVE DESIGN --- */
+
+/* For Tablets and smaller (iPad, etc.) */
+@media (max-width: 1024px) {
+    .app-container {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
+
+/* For Mobile Phones (iPhone, Android, etc.) */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column; /* Stacks sidebar on top of content */
+        overflow-y: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .sidebar .logo {
+        margin-bottom: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        overflow-x: auto; /* Allows horizontal scrolling of menu */
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    .sidebar nav li {
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+
+    .main-content {
+        padding: 30px 20px;
+    }
+
+    .main-title {
+        font-size: 3.5rem; /* Shrinks the big title */
+    }
+
+    .header-content {
+        flex-direction: column; /* Photo on top, text below */
+        text-align: center;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr; /* Certificates stack in 1 column */
+    }
+
+    .experience-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 #caption {
     text-align: center; color: #ccc;
     padding: 15px; font-family: 'Inter', sans-serif;
