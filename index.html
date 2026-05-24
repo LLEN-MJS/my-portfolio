@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allen Paul Mejos | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- ══ LOADING SCREEN ══ -->
+    <div id="loading-screen">
+        <div class="loader-logo">APM</div>
+        <div class="loader-name">Allen Paul Mejos</div>
+        <div class="loader-bar-wrap">
+            <div class="loader-bar"></div>
+        </div>
+        <div class="loader-status">Initializing portfolio...</div>
+    </div>
+
     <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
+
+    <!-- Aurora Background -->
+    <canvas id="aurora-canvas"></canvas>
 
     <!-- Particle Canvas -->
     <canvas id="particle-canvas"></canvas>
 
     <div class="app-container">
         <aside class="sidebar">
-            <div class="logo">APM</div>
+            <div class="logo"><span>APM</span></div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
@@ -31,15 +45,19 @@
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
+            <div class="sidebar-footer">© 2025 &nbsp;·&nbsp; BSIT</div>
         </aside>
 
         <main class="main-content">
+
             <header id="about" class="reveal">
                 <h1 class="main-title">PORTFOLIO</h1>
 
                 <div class="header-content header-centered">
-                    <div class="profile-frame profile-frame-large">
-                        <img src="allen.png" alt="Allen Paul P. Mejos" class="profile-img">
+                    <div class="profile-frame-large">
+                        <div class="profile-img-wrapper">
+                            <img src="allen.png" alt="Allen Paul P. Mejos" class="profile-img">
+                        </div>
                     </div>
                     <div class="header-text header-text-centered">
                         <h2 id="typing-header"></h2>
@@ -51,17 +69,35 @@
 
             <section id="skills" class="reveal">
                 <h2>Skills</h2>
-                <div class="skill-tags">
-                    <span>Graphic Editing & Design</span>
-                    <span>Figma</span>
-                    <span>Canva</span>
-                    <span>Video Editing</span>
-                    <span>CapCut</span>
-                    <span>Photography & Videography</span>
-                    <span>Basic Computer Literacy</span>
-                    <span>Task Management</span>
-                    <span>Microsoft Office</span>
-                    <span>Google Workspace</span>
+                <div class="skill-marquee">
+                    <div class="skill-track">
+                        <!-- Original set -->
+                        <div class="skill-tags">
+                            <span><i class="fa-solid fa-pen-nib"></i> Graphic Editing &amp; Design</span>
+                            <span><i class="devicon-figma-plain"></i> Figma</span>
+                            <span><i class="fa-solid fa-palette"></i> Canva</span>
+                            <span><i class="fa-solid fa-film"></i> Video Editing</span>
+                            <span><i class="fa-solid fa-scissors"></i> CapCut</span>
+                            <span><i class="fa-solid fa-camera"></i> Photography &amp; Videography</span>
+                            <span><i class="fa-solid fa-desktop"></i> Basic Computer Literacy</span>
+                            <span><i class="fa-solid fa-list-check"></i> Task Management</span>
+                            <span><i class="fa-brands fa-microsoft"></i> Microsoft Office</span>
+                            <span><i class="fa-brands fa-google"></i> Google Workspace</span>
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="skill-tags" aria-hidden="true">
+                            <span><i class="fa-solid fa-pen-nib"></i> Graphic Editing &amp; Design</span>
+                            <span><i class="devicon-figma-plain"></i> Figma</span>
+                            <span><i class="fa-solid fa-palette"></i> Canva</span>
+                            <span><i class="fa-solid fa-film"></i> Video Editing</span>
+                            <span><i class="fa-solid fa-scissors"></i> CapCut</span>
+                            <span><i class="fa-solid fa-camera"></i> Photography &amp; Videography</span>
+                            <span><i class="fa-solid fa-desktop"></i> Basic Computer Literacy</span>
+                            <span><i class="fa-solid fa-list-check"></i> Task Management</span>
+                            <span><i class="fa-brands fa-microsoft"></i> Microsoft Office</span>
+                            <span><i class="fa-brands fa-google"></i> Google Workspace</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -119,14 +155,39 @@
                 <h2>Projects</h2>
                 <div class="project-grid">
                     <div class="glass-card project-card">
-                        <div class="project-tag">UI/UX Design</div>
-                        <h3>E-Commerce Interface</h3>
-                        <div class="project-tech"><span>Figma</span><span>UI/UX</span></div>
+                        <div class="project-number">01</div>
+                        <div class="project-tag">Mobile App</div>
+                        <h3>Color Palette Diary</h3>
+                        <p class="project-desc">A mobile app that lets you save and browse your favorite colors. Built as a school project.</p>
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>Expo</span>
+                        </div>
+                        <a href="https://snack.expo.dev/@llen/color-palette-diary" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="glass-card project-card">
-                        <div class="project-tag">Development</div>
-                        <h3>React Dashboard</h3>
-                        <div class="project-tech"><span>ReactJS</span><span>CSS3</span></div>
+                        <div class="project-number">02</div>
+                        <div class="project-tag">Capstone Project</div>
+                        <h3>KidDoodle</h3>
+                        <p class="project-desc">A mobile application for children that converts their drawings into stories using AI. I was responsible for the UI/UX design — crafting the visual layout and experience for young users.</p>
+                        <div class="project-tech">
+                            <span>UI/UX Design</span>
+                            <span>Figma</span>
+                            <span>Mobile App</span>
+                        </div>
+                        <a href="https://github.com/Gemelpineda05/KidDoodle-Capstone" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-number">03</div>
+                        <div class="project-tag">UI/UX Design</div>
+                        <h3>TravelBlog</h3>
+                        <p class="project-desc">A web design for a Philippine travel blog where users can explore beautiful destinations, read travel stories, and discover hidden gems across the Philippines.</p>
+                        <div class="project-tech">
+                            <span>Figma</span>
+                            <span>Web Design</span>
+                            <span>UI/UX</span>
+                        </div>
+                        <a href="https://www.figma.com/design/MLpWZdD97n6CJ0sDM2XvpM/ADV-PROJECT-DESIGN?node-id=0-1" target="_blank" class="project-link">View Design <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </section>
@@ -183,9 +244,18 @@
             <footer id="contact" class="reveal">
                 <h2>Let's Connect</h2>
                 <div class="glass-card contact-details">
-                    <p>Email: <span>allenpaul.mejos@hcdc.edu.ph</span></p>
-                    <p>Phone: <span>+63 976-479-5370</span></p>
-                    <p>Address: <span>23 Maya-Maya St. New Salmonan, Agdao, Davao City</span></p>
+                    <p>
+                        <span class="contact-label">Email</span>
+                        <span>allenpaul.mejos@hcdc.edu.ph</span>
+                    </p>
+                    <p>
+                        <span class="contact-label">Phone</span>
+                        <span>+63 976-479-5370</span>
+                    </p>
+                    <p>
+                        <span class="contact-label">Address</span>
+                        <span>23 Maya-Maya St. New Salmonan, Agdao, Davao City</span>
+                    </p>
                 </div>
             </footer>
         </main>
