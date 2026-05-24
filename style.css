@@ -396,8 +396,9 @@ h2::after {
     .main-content { padding: 24px 16px; overflow-x: hidden; }
 
     .main-title {
-        font-size: clamp(2rem, 13vw, 4rem);
+        font-size: clamp(1.2rem, 7.5vw, 4rem);
         white-space: nowrap; overflow: hidden;
+        letter-spacing: 0px;
     }
 
     .header-centered { gap: 18px; }
