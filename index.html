@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allen Paul Mejos | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
 
     <div class="app-container">
         <aside class="sidebar">
@@ -18,6 +25,7 @@
                     <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
                     <li><a href="#skills"><i class="fas fa-lightbulb"></i> Skills</a></li>
                     <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
                     <li><a href="#projects"><i class="fas fa-th-large"></i> Projects</a></li>
                     <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -28,50 +36,87 @@
         <main class="main-content">
             <header id="about" class="reveal">
                 <h1 class="main-title">PORTFOLIO</h1>
-                
-                <div class="header-content">
-                    <div class="profile-area">
-                        <div class="profile-frame">
-                            <img src="allen.png" alt="Allen Paul P. Mejos" class="profile-img">
-                        </div>
-                    </div>
 
-                    <div class="header-text">
+                <div class="header-content header-centered">
+                    <div class="profile-frame profile-frame-large">
+                        <img src="allen.png" alt="Allen Paul P. Mejos" class="profile-img">
+                    </div>
+                    <div class="header-text header-text-centered">
                         <h2 id="typing-header"></h2>
-                        <p class="subtitle">BSIT STUDENT | UI/UX DESIGNER</p>
-                        <p class="summary">Focusing on modern UI/UX and Graphic Design. Currently a 4th-year IT student seeking an internship to translate creative concepts into functional IT solutions.</p>
+                        <p class="subtitle">BSIT Student &nbsp;·&nbsp; Graphic Designer &nbsp;·&nbsp; IT Intern</p>
+                        <p class="summary">A Bachelor of Science in Information Technology student seeking opportunities for skill enhancement and career growth, with basic knowledge of UI/UX design, graphic editing, and experience in data entry and administrative tasks. Motivated to learn and grow through practical IT experience.</p>
                     </div>
                 </div>
             </header>
 
             <section id="skills" class="reveal">
-                <h2>Technical Skills</h2>
+                <h2>Skills</h2>
                 <div class="skill-tags">
-                    <span>UI/UX Design</span><span>Graphic Design</span><span>Figma</span>
+                    <span>Graphic Editing & Design</span>
+                    <span>Figma</span>
                     <span>Canva</span>
+                    <span>Video Editing</span>
+                    <span>CapCut</span>
+                    <span>Photography & Videography</span>
+                    <span>Basic Computer Literacy</span>
+                    <span>Task Management</span>
+                    <span>Microsoft Office</span>
+                    <span>Google Workspace</span>
                 </div>
             </section>
 
             <section id="experience" class="reveal">
-                <h2>Professional Experience</h2>
+                <h2>Experience</h2>
                 <div class="glass-card experience-card">
-                    <i class="fas fa-palette experience-icon"></i>
+                    <i class="fas fa-laptop experience-icon"></i>
                     <div class="exp-text">
-                        <h3>Graphic Illustrator and Designer</h3>
-                        <p>Expertise in UI/UX layouts, wireframing, and visual design using Figma and Canva.</p>
+                        <h3>IT Intern — SPLACE BPO</h3>
+                        <p>Gained hands-on experience with PC components and computer assembly. Performed basic PC maintenance including Windows installation, reformatting, and software configuration. Supported the preparation and deployment of computer units for employees.</p>
                     </div>
                 </div>
                 <div class="glass-card experience-card">
                     <i class="fas fa-database experience-icon"></i>
                     <div class="exp-text">
                         <h3>Data Entry / Quality Control</h3>
-                        <p>Auditing and validating encoded information to ensure accuracy and quality compliance.</p>
+                        <p>Cross-checked patient information and tests requested. Conducted data auditing by validating encoded information against reference sources to ensure accuracy and quality compliance.</p>
+                    </div>
+                </div>
+                <div class="glass-card experience-card">
+                    <i class="fas fa-palette experience-icon"></i>
+                    <div class="exp-text">
+                        <h3>Graphic Designer / Personal Projects</h3>
+                        <p>Created and edited short-form videos using CapCut for social media content. Captured photos and videos with attention to lighting, angles, and composition. Designed UI/UX layouts for applications and websites using Figma and Canva.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="reveal">
+                <h2>Education</h2>
+                <div class="glass-card experience-card">
+                    <i class="fas fa-university experience-icon"></i>
+                    <div class="exp-text">
+                        <h3>Holy Cross of Davao College</h3>
+                        <p>Bachelor of Science in Information and Technology</p>
+                    </div>
+                </div>
+                <div class="glass-card experience-card">
+                    <i class="fas fa-school experience-icon"></i>
+                    <div class="exp-text">
+                        <h3>Holy Cross of Agdao</h3>
+                        <p>High School / Senior High School</p>
+                    </div>
+                </div>
+                <div class="glass-card experience-card">
+                    <i class="fas fa-child experience-icon"></i>
+                    <div class="exp-text">
+                        <h3>Jose L. Porras Elementary School</h3>
+                        <p>Elementary</p>
                     </div>
                 </div>
             </section>
 
             <section id="projects" class="reveal">
-                <h2>Featured Projects</h2>
+                <h2>Projects</h2>
                 <div class="project-grid">
                     <div class="glass-card project-card">
                         <div class="project-tag">UI/UX Design</div>
@@ -90,62 +135,66 @@
                 <h2>Certifications</h2>
                 <div class="cert-grid">
                     <div class="glass-card cert-card">
-                        <div class="cert-img-container"><img src="CERT1.png" class="cert-preview"></div>
+                        <div class="cert-img-container"><img src="CERT1.png" class="cert-preview" alt="Front End Development"></div>
                         <h3>Front End Development</h3>
                     </div>
                     <div class="glass-card cert-card">
-                        <div class="cert-img-container"><img src="CERT2.png" class="cert-preview"></div>
+                        <div class="cert-img-container"><img src="CERT2.png" class="cert-preview" alt="Introduction to SQL"></div>
                         <h3>Introduction to SQL</h3>
                     </div>
                     <div class="glass-card cert-card">
-                        <div class="cert-img-container"><img src="CERT3.png" class="cert-preview"></div>
+                        <div class="cert-img-container"><img src="CERT3.png" class="cert-preview" alt="ReactJS for Beginners"></div>
                         <h3>ReactJS for Beginners</h3>
                     </div>
 
-                    <div class="glass-card cert-card extra-cert" style="display: none;">
-                        <div class="cert-img-container"><img src="CERT4.png" class="cert-preview"></div>
+                    <div class="glass-card cert-card extra-cert" style="display:none;">
+                        <div class="cert-img-container"><img src="CERT4.png" class="cert-preview" alt="Networking"></div>
                         <h3>Networking</h3>
                     </div>
-                    <div class="glass-card cert-card extra-cert" style="display: none;">
-                        <div class="cert-img-container"><img src="CERT5.png" class="cert-preview"></div>
+                    <div class="glass-card cert-card extra-cert" style="display:none;">
+                        <div class="cert-img-container"><img src="CERT5.png" class="cert-preview" alt="Machine Learning with R"></div>
                         <h3>Machine Learning with R</h3>
                     </div>
-                    <div class="glass-card cert-card extra-cert" style="display: none;">
-                        <div class="cert-img-container"><img src="CERT6.png" class="cert-preview"></div>
+                    <div class="glass-card cert-card extra-cert" style="display:none;">
+                        <div class="cert-img-container"><img src="CERT6.png" class="cert-preview" alt="Python for Beginners"></div>
                         <h3>Python for Beginners</h3>
                     </div>
-                    <div class="glass-card cert-card extra-cert" style="display: none;">
-                        <div class="cert-img-container"><img src="CERT7.png" class="cert-preview"></div>
+                    <div class="glass-card cert-card extra-cert" style="display:none;">
+                        <div class="cert-img-container"><img src="CERT7.png" class="cert-preview" alt="Advanced Python"></div>
                         <h3>Advanced Python</h3>
                     </div>
-                    <div class="glass-card cert-card extra-cert" style="display: none;">
-                        <div class="cert-img-container"><img src="CERT8.png" class="cert-preview"></div>
+                    <div class="glass-card cert-card extra-cert" style="display:none;">
+                        <div class="cert-img-container"><img src="CERT8.png" class="cert-preview" alt="Deep Learning Tensorflow"></div>
                         <h3>Deep Learning (Tensorflow)</h3>
                     </div>
-                    <div class="glass-card cert-card extra-cert" style="display: none;">
-                        <div class="cert-img-container"><img src="CERT9.png" class="cert-preview"></div>
+                    <div class="glass-card cert-card extra-cert" style="display:none;">
+                        <div class="cert-img-container"><img src="CERT9.png" class="cert-preview" alt="Full Stack Java"></div>
                         <h3>Full Stack Java Development</h3>
                     </div>
                 </div>
 
                 <div class="toggle-container">
-                    <button id="cert-toggle-btn" class="glass-btn">Show More <i class="fas fa-chevron-down"></i></button>
+                    <button id="cert-toggle-btn" class="glass-btn">
+                        Show More <i class="fas fa-chevron-down"></i>
+                    </button>
                 </div>
             </section>
 
             <footer id="contact" class="reveal">
                 <h2>Let's Connect</h2>
-                <div class="contact-details">
+                <div class="glass-card contact-details">
                     <p>Email: <span>allenpaul.mejos@hcdc.edu.ph</span></p>
-                    <p>Phone: <span>0976-479-5370</span></p>
+                    <p>Phone: <span>+63 976-479-5370</span></p>
+                    <p>Address: <span>23 Maya-Maya St. New Salmonan, Agdao, Davao City</span></p>
                 </div>
             </footer>
         </main>
     </div>
 
+    <!-- Certificate Modal -->
     <div id="cert-modal" class="modal">
         <span class="close-modal">&times;</span>
-        <img class="modal-content" id="full-cert-img">
+        <img class="modal-content" id="full-cert-img" alt="Certificate">
         <div id="caption"></div>
     </div>
 
