@@ -45,13 +45,13 @@
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
-            <div class="sidebar-footer">© 2025 &nbsp;·&nbsp; BSIT</div>
+            <div class="sidebar-footer">© 2026 &nbsp;·&nbsp; BSIT</div>
         </aside>
 
         <main class="main-content">
 
             <header id="about" class="reveal">
-                <h1 class="main-title">PORTFOLIO</h1>
+                <h1 class="main-title glitch" data-text="PORTFOLIO">PORTFOLIO</h1>
 
                 <div class="header-content header-centered">
                     <div class="profile-frame-large">
@@ -61,14 +61,14 @@
                     </div>
                     <div class="header-text header-text-centered">
                         <h2 id="typing-header"></h2>
-                        <p class="subtitle">BSIT Student &nbsp;·&nbsp; Graphic Designer &nbsp;·&nbsp; IT Intern</p>
+                        <p class="subtitle" id="cycling-subtitle"></p>
                         <p class="summary">A Bachelor of Science in Information Technology student seeking opportunities for skill enhancement and career growth, with basic knowledge of UI/UX design, graphic editing, and experience in data entry and administrative tasks. Motivated to learn and grow through practical IT experience.</p>
                     </div>
                 </div>
             </header>
 
             <section id="skills" class="reveal">
-                <h2>Skills</h2>
+                <h2><i class="fas fa-lightbulb" style="font-size:0.75rem;opacity:0.6;"></i> Skills</h2>
                 <div class="skill-marquee">
                     <div class="skill-track">
                         <!-- Original set -->
@@ -102,7 +102,7 @@
             </section>
 
             <section id="experience" class="reveal">
-                <h2>Experience</h2>
+                <h2><i class="fas fa-briefcase" style="font-size:0.75rem;opacity:0.6;"></i> Experience</h2>
                 <div class="glass-card experience-card">
                     <i class="fas fa-laptop experience-icon"></i>
                     <div class="exp-text">
@@ -127,7 +127,7 @@
             </section>
 
             <section id="education" class="reveal">
-                <h2>Education</h2>
+                <h2><i class="fas fa-graduation-cap" style="font-size:0.75rem;opacity:0.6;"></i> Education</h2>
                 <div class="glass-card experience-card">
                     <i class="fas fa-university experience-icon"></i>
                     <div class="exp-text">
@@ -152,9 +152,20 @@
             </section>
 
             <section id="projects" class="reveal">
-                <h2>Projects</h2>
+                <h2><i class="fas fa-th-large" style="font-size:0.75rem;opacity:0.6;"></i> Projects</h2>
+
+                <!-- Filter Tabs -->
+                <div class="project-tabs">
+                    <button class="project-tab active" data-filter="all">All</button>
+                    <button class="project-tab" data-filter="developed">Developed</button>
+                    <button class="project-tab" data-filter="designed">Designed</button>
+                </div>
+
                 <div class="project-grid">
-                    <div class="glass-card project-card">
+                    <div class="glass-card project-card tilt-card" data-category="developed">
+                        <div class="project-thumb project-thumb-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
                         <div class="project-number">01</div>
                         <div class="project-tag">Mobile App</div>
                         <h3>Color Palette Diary</h3>
@@ -163,9 +174,12 @@
                             <span>React Native</span>
                             <span>Expo</span>
                         </div>
-                        <a href="https://snack.expo.dev/@llen/color-palette-diary" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <div class="project-link-wrap"><div class="link-preview"><i class="fas fa-mobile-alt"></i></div><a href="https://snack.expo.dev/@llen/color-palette-diary" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a></div>
                     </div>
-                    <div class="glass-card project-card">
+                    <div class="glass-card project-card tilt-card" data-category="designed">
+                        <div class="project-thumb project-thumb-placeholder">
+                            <i class="fas fa-child"></i>
+                        </div>
                         <div class="project-number">02</div>
                         <div class="project-tag">Capstone Project</div>
                         <h3>KidDoodle</h3>
@@ -175,9 +189,12 @@
                             <span>Figma</span>
                             <span>Mobile App</span>
                         </div>
-                        <a href="https://github.com/Gemelpineda05/KidDoodle-Capstone" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                        <div class="project-link-wrap"><div class="link-preview"><i class="fas fa-child"></i></div><a href="https://github.com/Gemelpineda05/KidDoodle-Capstone" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a></div>
                     </div>
-                    <div class="glass-card project-card">
+                    <div class="glass-card project-card tilt-card" data-category="designed">
+                        <div class="project-thumb project-thumb-placeholder">
+                            <i class="fas fa-globe"></i>
+                        </div>
                         <div class="project-number">03</div>
                         <div class="project-tag">UI/UX Design</div>
                         <h3>TravelBlog</h3>
@@ -187,13 +204,43 @@
                             <span>Web Design</span>
                             <span>UI/UX</span>
                         </div>
-                        <a href="https://www.figma.com/design/MLpWZdD97n6CJ0sDM2XvpM/ADV-PROJECT-DESIGN?node-id=0-1" target="_blank" class="project-link">View Design <i class="fas fa-arrow-right"></i></a>
+                        <div class="project-link-wrap"><div class="link-preview"><i class="fas fa-globe"></i></div><a href="https://www.figma.com/design/MLpWZdD97n6CJ0sDM2XvpM/ADV-PROJECT-DESIGN?node-id=0-1" target="_blank" class="project-link">View Design <i class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                    <div class="glass-card project-card tilt-card" data-category="designed">
+                        <div class="project-thumb project-thumb-placeholder">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="project-number">04</div>
+                        <div class="project-tag">UI/UX Design</div>
+                        <h3>Llen's Coffee</h3>
+                        <p class="project-desc">A mobile app UI design for a coffee ordering system featuring product listings, customizable add-ons, pricing in PHP, and an order confirmation flow. Designed as an exam project.</p>
+                        <div class="project-tech">
+                            <span>Figma</span>
+                            <span>Mobile UI</span>
+                            <span>UI/UX</span>
+                        </div>
+                        <div class="project-link-wrap"><div class="link-preview"><i class="fas fa-coffee"></i></div><a href="https://www.figma.com/proto/0WWDVARWVLNtsczC0A3x2A/MEJOS--ALLEN-PAUL-BSIT-1A-EXAM?node-id=1-2&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" target="_blank" class="project-link">View Prototype <i class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                    <div class="glass-card project-card tilt-card" data-category="designed">
+                        <div class="project-thumb project-thumb-placeholder">
+                            <i class="fas fa-motorcycle"></i>
+                        </div>
+                        <div class="project-number">05</div>
+                        <div class="project-tag">UI/UX Design</div>
+                        <h3>Flash</h3>
+                        <p class="project-desc">A food delivery mobile app UI design similar to FoodPanda, featuring product browsing, categories, cart, checkout, and order confirmation screens.</p>
+                        <div class="project-tech">
+                            <span>Figma</span>
+                            <span>Mobile UI</span>
+                            <span>UI/UX</span>
+                        </div>
+                        <div class="project-link-wrap"><div class="link-preview"><i class="fas fa-motorcycle"></i></div><a href="https://www.figma.com/proto/whTHdOGZ8GRNVjVITsUsgu/Flash?node-id=2-2&p=f&t=UuNqdUjpzZWtK0ri-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2" target="_blank" class="project-link">View Prototype <i class="fas fa-arrow-right"></i></a></div>
                     </div>
                 </div>
             </section>
 
             <section id="certificates" class="reveal">
-                <h2>Certifications</h2>
+                <h2><i class="fas fa-certificate" style="font-size:0.75rem;opacity:0.6;"></i> Certifications</h2>
                 <div class="cert-grid">
                     <div class="glass-card cert-card">
                         <div class="cert-img-container"><img src="CERT1.png" class="cert-preview" alt="Front End Development"></div>
@@ -242,7 +289,7 @@
             </section>
 
             <footer id="contact" class="reveal">
-                <h2>Let's Connect</h2>
+                <h2><i class="fas fa-envelope" style="font-size:0.75rem;opacity:0.6;"></i> Let's Connect</h2>
                 <div class="glass-card contact-details">
                     <p>
                         <span class="contact-label">Email</span>
@@ -252,14 +299,27 @@
                         <span class="contact-label">Phone</span>
                         <span>+63 976-479-5370</span>
                     </p>
-                    <p>
-                        <span class="contact-label">Address</span>
-                        <span>23 Maya-Maya St. New Salmonan, Agdao, Davao City</span>
-                    </p>
+
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/llen_mjs/" target="_blank" class="social-btn instagram">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://www.facebook.com/allenpaulm" target="_blank" class="social-btn facebook">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                    <a href="https://www.tiktok.com/@_artsy_stuff" target="_blank" class="social-btn tiktok">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </a>
                 </div>
             </footer>
         </main>
     </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Certificate Modal -->
     <div id="cert-modal" class="modal">

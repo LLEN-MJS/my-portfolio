@@ -301,7 +301,53 @@ function _type() {
         header.innerHTML += nameText.charAt(charIndex);
         charIndex++;
         setTimeout(_type, 80);
+    } else {
+        // Start cycling subtitle after name finishes
+        setTimeout(startCyclingSubtitle, 300);
     }
+}
+
+/* ══════════════════════════════════════════
+   CYCLING SUBTITLE
+══════════════════════════════════════════ */
+const subtitles = [
+    'BSIT Student',
+    'Graphic Designer',
+    'UI/UX Designer',
+    'IT Intern',
+    'Video Editor',
+];
+let subIndex = 0;
+let subCharIndex = 0;
+let isDeleting = false;
+const subtitleEl = document.getElementById('cycling-subtitle');
+
+function startCyclingSubtitle() {
+    if (!subtitleEl) return;
+    cycleSubtitle();
+}
+
+function cycleSubtitle() {
+    if (!subtitleEl) return;
+    const current = subtitles[subIndex];
+
+    if (!isDeleting) {
+        subtitleEl.textContent = current.substring(0, subCharIndex + 1);
+        subCharIndex++;
+        if (subCharIndex === current.length) {
+            isDeleting = true;
+            setTimeout(cycleSubtitle, 1800); // pause before deleting
+            return;
+        }
+    } else {
+        subtitleEl.textContent = current.substring(0, subCharIndex - 1);
+        subCharIndex--;
+        if (subCharIndex === 0) {
+            isDeleting = false;
+            subIndex = (subIndex + 1) % subtitles.length;
+        }
+    }
+    setTimeout(cycleSubtitle, isDeleting ? 45 : 80);
 }
 
 /* ══════════════════════════════════════════
@@ -384,6 +430,78 @@ window.onclick = (e) => { if (e.target === modal) modal.classList.remove('open')
 /* Keyboard close */
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') modal.classList.remove('open');
+});
+
+/* ══════════════════════════════════════════
+   PROJECT FILTER TABS
+══════════════════════════════════════════ */
+const tabs = document.querySelectorAll('.project-tab');
+const projectCards = document.querySelectorAll('.project-card');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.dataset.filter;
+        projectCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    });
+});
+
+/* ══════════════════════════════════════════
+   BACK TO TOP
+══════════════════════════════════════════ */
+const backToTopBtn = document.getElementById('back-to-top');
+
+scrollContainer.addEventListener('scroll', () => {
+    if (scrollContainer.scrollTop > 300) {
+        backToTopBtn.classList.add('visible');
+    } else {
+        backToTopBtn.classList.remove('visible');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ══════════════════════════════════════════
+   TILT EFFECT ON PROJECT CARDS
+══════════════════════════════════════════ */
+document.querySelectorAll('.tilt-card').forEach(card => {
+    // inject shine layer
+    const shine = document.createElement('div');
+    shine.classList.add('tilt-shine');
+    card.appendChild(shine);
+
+    card.addEventListener('mousemove', e => {
+        const rect   = card.getBoundingClientRect();
+        const x      = e.clientX - rect.left;
+        const y      = e.clientY - rect.top;
+        const cx     = rect.width  / 2;
+        const cy     = rect.height / 2;
+        const rotateX = ((y - cy) / cy) * -10;
+        const rotateY = ((x - cx) / cx) *  10;
+
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+        card.style.borderColor = 'rgba(61,184,255,0.45)';
+        card.style.boxShadow   = `0 24px 56px rgba(0,0,0,0.4), 0 0 30px rgba(61,184,255,0.12)`;
+
+        // move shine to follow cursor
+        shine.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.1), transparent 65%)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform   = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+        card.style.borderColor = '';
+        card.style.boxShadow   = '';
+    });
 });
 
 /* ══════════════════════════════════════════
